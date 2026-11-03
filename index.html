@@ -1,0 +1,54 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Analysis Tool</title>
+    <!-- Chessboard.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="board-section">
+            <div class="eval-bar-container">
+                <div id="eval-bar-fill"></div>
+            </div>
+            <div id="board"></div>
+        </div>
+
+        <div class="sidebar">
+            <div class="panel">
+                <h2>Оценка: <span id="eval-score">0.00</span></h2>
+                <div class="lines-container" id="engine-lines">
+                    <div class="line" id="line-1">Загрузка движка...</div>
+                    <div class="line" id="line-2"></div>
+                    <div class="line" id="line-3"></div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Управление позицией</h3>
+                <div class="input-group">
+                    <label>FEN</label>
+                    <input type="text" id="fen-input" placeholder="Введите FEN">
+                    <button id="load-fen-btn">Загрузить FEN</button>
+                </div>
+                <div class="input-group">
+                    <label>PGN</label>
+                    <textarea id="pgn-input" rows="4" placeholder="Вставьте PGN партию"></textarea>
+                    <button id="load-pgn-btn">Загрузить PGN</button>
+                </div>
+                <button id="reset-btn" class="secondary-btn">Сбросить доску</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Библиотеки: jQuery (нужен для chessboard.js), Chess.js, Chessboard.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
